@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import { AdMobFree, AdMobFreeBannerConfig, AdMobFreeInterstitialConfig } from '@ionic-native/admob-free';
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
 
 @Component({
@@ -9,7 +9,7 @@ import { SpeechRecognition } from '@ionic-native/speech-recognition';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, private speechRecognition: SpeechRecognition) {
+  constructor(public navCtrl: NavController, private speechRecognition: SpeechRecognition, public admob: AdMobFree) {
 
   }
 
@@ -47,5 +47,22 @@ export class HomePage {
       }, 2900)
     }
   }
+  
+  showBanner() {
+ 
+        let bannerConfig: AdMobFreeBannerConfig = {
+            isTesting: true, // Remove in production
+            autoShow: true,
+            id: "ca-app-pub-2343597050706306/2593956753"
+        };
+ 
+        this.admob.banner.config(bannerConfig);
+ 
+        this.admob.banner.prepare().then(() => {
+            // success
+        }).catch(e => console.log(e));
+ 
+    }
+	
 
 }
