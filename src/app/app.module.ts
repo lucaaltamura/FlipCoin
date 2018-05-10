@@ -1,12 +1,12 @@
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { DeviceMotion } from '@ionic-native/device-motion';
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HomePage } from '../pages/home/home';
 import { MyApp } from './app.component';
-
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { MyApp } from './app.component';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SpeechRecognition
+    SpeechRecognition,
+    DeviceMotion
   ]
 })
 export class AppModule {}

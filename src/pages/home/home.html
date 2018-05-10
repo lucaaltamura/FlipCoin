@@ -8,11 +8,9 @@
 
 <ion-content padding>
     <div id="coin" class="coin-flip">
-        <!-- <div class="coin-heads"> -->
-        <div id="testa" (click)="flipCoin()">
+        <div id="testa" (click)="flipCoin()" (swipe)="flipCoin()">
           <img src="imgs/testa.jpg">
         </div>
-        <!-- <div class="coin-tails"> -->
             <div id="croce" (click)="flipCoin()" style="display: none;"> 
           <img src="imgs/croce.jpg">
         </div>
