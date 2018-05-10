@@ -90,12 +90,11 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\luca.altamura\FlipCoin\FlipCoin\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <div id="coin" class="coin-flip">\n        <div id="testa" (click)="flipCoin()" (swipe)="flipCoin()">\n          <img src="imgs/testa.jpg">\n        </div>\n            <div id="croce" (click)="flipCoin()" style="display: none;"> \n          <img src="imgs/croce.jpg">\n        </div>\n      </div>\n</ion-content>'/*ion-inline-end:"C:\Users\luca.altamura\FlipCoin\FlipCoin\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Luca\Desktop\coin\src\pages\home\home.html"*/'<ion-content padding>\n\n  \n\n	<div class="coin">\n\n		<div class="testa" (click)="flipCoin()" (swipe)="flipCoin()"></div>\n\n		<div class="testa_b" (click)="flipCoin()" (swipe)="flipCoin()"></div>\n\n		<div class="croce" (click)="flipCoin()" (swipe)="flipCoin()"></div>\n\n		<div class="croce_b" (click)="flipCoin()" (swipe)="flipCoin()"></div>\n\n	</div>\n\n	  	  \n\n</ion-content>'/*ion-inline-end:"C:\Users\Luca\Desktop\coin\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_speech_recognition__["a" /* SpeechRecognition */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_speech_recognition__["a" /* SpeechRecognition */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_speech_recognition__["a" /* SpeechRecognition */]])
     ], HomePage);
     return HomePage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -216,7 +215,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\luca.altamura\FlipCoin\FlipCoin\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\luca.altamura\FlipCoin\FlipCoin\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Luca\Desktop\coin\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Luca\Desktop\coin\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);

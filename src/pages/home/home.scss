@@ -1,45 +1,158 @@
 page-home {
 
-    .coin-flip{
-        width: 100px;
-        height: 100px;
-        left: 0;
-        right: 0;
-        top: 80%;
-        margin: auto;
-        transform-style: preserve-3d;
-        position: absolute;
-      }
-      .coin-flip img{
-        width: 100px;
-      }
+	.coin {
+	  margin: -50px 0 0 -50px;
+	  width: 100px;
+	  height: 100px;
+	  position: absolute;
+	  top: 90%;
+	  left: 50%;
+	  transform-style: preserve-3d;
+	  
+	  animation: coin 1s linear infinite;
+	}
+
+	
+	
+	.coin .testa {
+	  width: 100%;
+	  height: 100%;
+	  border-radius: 50%;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: -1;
+	  
+	  
+	}
+
+	.coin .croce {
+	  width: 100%;
+	  height: 100%;
+	  background: #f7941e;
+	  border-radius: 50%;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: 1; 
+	 
+	 
+	   transform: rotateY(180deg) translateZ(10px);
+	}
+
+	.coin .testa_b {
+	  width: 100%;
+	  height: 100%;
+	  background: #f7941e;
+	  border-radius: 50%;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: 2;
+	  
+	  transform: translateZ(-1px);
+	}
+
+	.coin .croce_b {
+	  width: 100%;
+	  height: 100%;
+	  background: #f7941e;
+	  border-radius: 50%;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: -2;
+	  
+	  transform: translateZ(-9px);
+	}
+
+	.coin:before {
+	      content: "";
+    margin-left: -10px;
+    width: 10px;
+    height: 100%;
+    background: #f7941e;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    transform: rotateX(90deg) rotateZ(90deg);
+    transform-origin: 100% 50%;
+	}
+
+	.coin .testa_b:before {
+	  content: "";
+	  width: 100%;
+	  height: 100%;
+	  border: 10px solid #fbb041;
+	  border-radius: 50%;
+	  box-sizing: border-box;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: 3;
+	}
+
+	.coin .testa_b:after {
+	  content: "T";
+	  padding: 18px 0 0 0;
+	  width: 100%;
+	  height: 100%;
+	  font-size: 5em;
+	  font-weight: bold;
+	  color: #fbb041;
+	  line-height: 1;
+	  text-align: center;
+	  box-sizing: border-box;
+	  position: absolute;  
+	  top: 0;
+	  left: 0;
+	  z-index: 4;
+	}
+
+	.coin .croce:before {
+	  content: "";
+	  width: 100%;
+	  height: 100%;
+	  border: 10px solid #fbb041;
+	  border-radius: 50%;
+	  box-sizing: border-box;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: -3;
+	}
+
+	.coin .croce:after {
+	  content: "C";
+	  padding: 27px 0 0 0;
+	  width: 100%;
+	  height: 100%;
+	  font-size: 3em;
+	  font-weight: bold;
+	  color: #fbb041;
+	  line-height: 1;
+	  text-align: center;
+	  box-sizing: border-box;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: -4;
+	  transform: rotateY(180deg);
+	}
+	
+	
+	  
+	   @keyframes coin {
+	  0% {
+		transform: rotateX(0);
+	  }
+	  100% {
+		transform: rotateX(360deg);
+	  }
+	  }
       
-      .coin-heads, .coin-tails {
-        backface-visibility: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-      
-      .coin-heads{
-        animation: flip-head 1s linear 0s infinite alternate;
-      }
-      .coin-tails{
-        animation: flip-tail 1s linear 0s infinite alternate;
-      }
-      
-      @keyframes fly {
-        0% { top: 80%; }
-        100% { top: 0%; }
-      }
-      
-      @keyframes flip-head {
-        0%, 100% { transform: rotateX(0deg); }
-        50% { transform: rotateX(180deg); }
-      }
-      
-      @keyframes flip-tail {
-        0%, 100% { transform: rotateX(180deg); }
-        50% { transform: rotateX(0deg); }
-      }
+	  
+
+
 }

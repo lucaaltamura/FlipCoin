@@ -1,18 +1,10 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-    <div id="coin" class="coin-flip">
-        <div id="testa" (click)="flipCoin()" (swipe)="flipCoin()">
-          <img src="imgs/testa.jpg">
-        </div>
-            <div id="croce" (click)="flipCoin()" style="display: none;"> 
-          <img src="imgs/croce.jpg">
-        </div>
-      </div>
+  
+	<div class="coin">
+		<div class="testa" (click)="flipCoin()" (swipe)="flipCoin()"></div>
+		<div class="testa_b" (click)="flipCoin()" (swipe)="flipCoin()"></div>
+		<div class="croce" (click)="flipCoin()" (swipe)="flipCoin()"></div>
+		<div class="croce_b" (click)="flipCoin()" (swipe)="flipCoin()"></div>
+	</div>
+	  	  
 </ion-content>
