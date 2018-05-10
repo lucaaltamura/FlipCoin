@@ -28723,15 +28723,112 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-home .fixed-content {
+  -webkit-animation: background 10s cubic-bezier(0, 0, 0, 0) infinite;
+  animation: background 10s cubic-bezier(0, 0, 0, 0) infinite;
+}
+
+@-webkit-keyframes background {
+  0% {
+    background-color: #9b2828;
+  }
+  7.14% {
+    background-color: #9b2852;
+  }
+  14.28% {
+    background-color: #84289b;
+  }
+  21.42% {
+    background-color: #3f289b;
+  }
+  28.56% {
+    background-color: #286b9b;
+  }
+  35.7% {
+    background-color: #289b9b;
+  }
+  45.84% {
+    background-color: #289b5b;
+  }
+  52% {
+    background-color: #3f9b28;
+  }
+  58.14% {
+    background-color: #6f9b28;
+  }
+  67.28% {
+    background-color: #9b8d28;
+  }
+  76.42% {
+    background-color: #9b7228;
+  }
+  84.57% {
+    background-color: #9b5d28;
+  }
+  92.7% {
+    background-color: #9b4828;
+  }
+  100% {
+    background-color: #9b3328;
+  }
+}
+
+@keyframes background {
+  0% {
+    background-color: #9b2828;
+  }
+  7.14% {
+    background-color: #9b2852;
+  }
+  14.28% {
+    background-color: #84289b;
+  }
+  21.42% {
+    background-color: #3f289b;
+  }
+  28.56% {
+    background-color: #286b9b;
+  }
+  35.7% {
+    background-color: #289b9b;
+  }
+  45.84% {
+    background-color: #289b5b;
+  }
+  52% {
+    background-color: #3f9b28;
+  }
+  58.14% {
+    background-color: #6f9b28;
+  }
+  67.28% {
+    background-color: #9b8d28;
+  }
+  76.42% {
+    background-color: #9b7228;
+  }
+  84.57% {
+    background-color: #9b5d28;
+  }
+  92.7% {
+    background-color: #9b4828;
+  }
+  100% {
+    background-color: #9b3328;
+  }
+}
+
 page-home .coin {
   margin: -50px 0 0 -50px;
   width: 100px;
   height: 100px;
   position: absolute;
-  top: 90%;
+  top: 60%;
   left: 50%;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  border: solid 1px #473f3f;
+  border-radius: 100%;
   -webkit-animation: coin 1s linear infinite;
   animation: coin 1s linear infinite;
 }
@@ -28905,4 +29002,18 @@ page-home .coin .croce:after {
   100% {
     top: 0%;
   }
+}
+
+page-home .shadow {
+  background-color: rgba(255, 0, 0, 0.3);
+  margin-top: 5em;
+  width: 54px;
+  margin-top: 35.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100%;
+}
+
+page-home .shadow p {
+  color: transparent;
 }

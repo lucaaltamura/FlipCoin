@@ -1,19 +1,45 @@
 page-home {
 
+.fixed-content {animation: background 10s cubic-bezier(0, 0, 0, 0) infinite}
+
+
+@keyframes background {
+  0% { background-color: #9b2828; }
+  7.14% { background-color: #9b2852; }  
+  14.28% { background-color: #84289b; }
+  21.42% { background-color: #3f289b; }
+  28.56% { background-color: #286b9b; }
+  35.7% { background-color: #289b9b; }
+  45.84% { background-color: #289b5b; }
+  52% { background-color: #3f9b28; }
+  58.14% { background-color: #6f9b28; }
+  67.28% { background-color: #9b8d28; }
+  76.42% { background-color: #9b7228; }
+  84.57% { background-color: #9b5d28; }
+  92.7% { background-color: #9b4828; }
+  100% { background-color: #9b3328; }
+  
+  
+}
+
+
+
+
+
 	.coin {
 	  margin: -50px 0 0 -50px;
 	  width: 100px;
 	  height: 100px;
 	  position: absolute;
-	  top: 90%;
+	  top: 60%;
 	  left: 50%;
 	  transform-style: preserve-3d;
+	  border: solid 1px #473f3f;
+      border-radius: 100%;
 	  
 	  animation: coin 1s linear infinite;
 	}
 
-	
-	
 	.coin .testa {
 	  width: 100%;
 	  height: 100%;
@@ -21,9 +47,7 @@ page-home {
 	  position: absolute;
 	  top: 0;
 	  left: 0;
-	  z-index: -1;
-	  
-	  
+	  z-index: -1;	  
 	}
 
 	.coin .croce {
@@ -35,8 +59,6 @@ page-home {
 	  top: 0;
 	  left: 0;
 	  z-index: 1; 
-	 
-	 
 	   transform: rotateY(180deg) translateZ(10px);
 	}
 
@@ -49,7 +71,6 @@ page-home {
 	  top: 0;
 	  left: 0;
 	  z-index: 2;
-	  
 	  transform: translateZ(-1px);
 	}
 
@@ -156,5 +177,26 @@ page-home {
         0% { top: 80%; }
         100% { top: 0%; }
       }
+	  
+	  
+	  
+	  
+	  
+	  
+	  .shadow{
+		background-color:rgba(255, 0, 0, 0.3);
+		margin-top:5em;
+		width: 54px;
+		margin-top: 35.5em;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius:100%		
+		}
+	  
+	  .shadow p{color:rgba(0, 0, 0, 0);}
+	  
+	  
+	  
+	  
 
 }

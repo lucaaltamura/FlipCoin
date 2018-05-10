@@ -90,7 +90,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Luca\Desktop\coin\src\pages\home\home.html"*/'<ion-content padding>\n\n  \n\n	<div class="coin">\n\n		<div class="testa" (click)="flipCoin()" (swipe)="flipCoin()"></div>\n\n		<div class="testa_b" (click)="flipCoin()" (swipe)="flipCoin()"></div>\n\n		<div class="croce" (click)="flipCoin()" (swipe)="flipCoin()"></div>\n\n		<div class="croce_b" (click)="flipCoin()" (swipe)="flipCoin()"></div>\n\n	</div>\n\n	  	  \n\n</ion-content>'/*ion-inline-end:"C:\Users\Luca\Desktop\coin\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Luca\Desktop\coin\src\pages\home\home.html"*/'<ion-content padding>\n\n  \n\n	<div class="coin">\n\n		<div class="testa" (click)="flipCoin()" (swipe)="flipCoin()"></div>\n\n		<div class="testa_b" (click)="flipCoin()" (swipe)="flipCoin()"></div>\n\n		<div class="croce" (click)="flipCoin()" (swipe)="flipCoin()"></div>\n\n		<div class="croce_b" (click)="flipCoin()" (swipe)="flipCoin()"></div>\n\n	</div>\n\n	<!--<div class="shadow"><p>a</p></div>-->\n\n	  	  \n\n</ion-content>'/*ion-inline-end:"C:\Users\Luca\Desktop\coin\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_speech_recognition__["a" /* SpeechRecognition */]])
     ], HomePage);
