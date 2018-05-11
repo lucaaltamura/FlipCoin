@@ -19,8 +19,8 @@ export class HomePage {
       return Math.floor((Math.random() * 2) + 1);
     }
 
-    //Applico l'animazione del fly -> DA SISTEMARE
-    document.getElementById("coin").setAttribute("style", "animation: fly 1.5s ease-in-out 0s 3");
+    //Applico l'animazione del fly
+    document.getElementById("coin").setAttribute("style", "animation: fly 2s ease-in-out 0s 1");
 
     //Recupero il numero randomico generato
     var result = flip();
@@ -39,13 +39,21 @@ export class HomePage {
     //Verifico il risultato
     if (result === 1) {
       console.log("TESTA");
-      setTimeout(() => { coinAnimation.pause(); }, 4000)
+      setTimeout(() => { coinAnimation.pause(); }, 2000)
     }
     else if (result === 2) {
+	  document.getElementById("coin").setAttribute("style", "animation: fly 2.5s ease-in-out 0s 1");
       console.log("CROCE");
-      setTimeout(() => { coinAnimation.pause(); }, 4500)
+      setTimeout(() => { coinAnimation.pause(); }, 2500)
     }
   }
+  
+  
+  
+  
+  
+  
+  
 
   showBanner() {
 
