@@ -1,26 +1,23 @@
 page-home {
 
-.fixed-content {animation: background 10s cubic-bezier(0, 0, 0, 0) infinite}
-
-
-@keyframes background {
-  0% { background-color: #9b2828; }
-  7.14% { background-color: #9b2852; }  
-  14.28% { background-color: #84289b; }
-  21.42% { background-color: #3f289b; }
-  28.56% { background-color: #286b9b; }
-  35.7% { background-color: #289b9b; }
-  45.84% { background-color: #289b5b; }
-  52% { background-color: #3f9b28; }
-  58.14% { background-color: #6f9b28; }
-  67.28% { background-color: #9b8d28; }
-  76.42% { background-color: #9b7228; }
-  84.57% { background-color: #9b5d28; }
-  92.7% { background-color: #9b4828; }
-  100% { background-color: #9b3328; }
-  
-  
-}
+	.fixed-content {animation: background 10s cubic-bezier(0, 0, 0, 0) infinite}
+	
+	@keyframes background{
+	  0%{background-color:#9b2828}
+	  7.14%{background-color:#9b2852}  
+	  14.28%{background-color:#84289b}
+	  21.42%{background-color:#3f289b}
+	  28.56%{background-color:#286b9b}
+	  35.7%{background-color:#289b9b}
+	  45.84%{background-color:#289b5b}
+	  52%{background-color:#3f9b28}
+	  58.14%{background-color:#6f9b28}
+	  67.28%{background-color:#9b8d28}
+	  76.42%{background-color:#9b7228}
+	  84.57%{background-color:#9b5d28}
+	  92.7%{background-color:#9b4828}
+	  100%{background-color:#9b3328}
+	}
 
 
 
@@ -28,14 +25,14 @@ page-home {
 
 	.coin {
 	  margin: -50px 0 0 -50px;
-	  width: 100px;
-	  height: 100px;
+	  width: 130px;
+	  height: 130px;
 	  position: absolute;
 	  top: 60%;
 	  left: 50%;
 	  transform-style: preserve-3d;
 	  border: solid 1px #473f3f;
-    border-radius: 100%;
+	  border-radius: 100%;
 	}
 
 	.coin .testa {
@@ -114,7 +111,7 @@ page-home {
 
 	.coin .testa_b:after {
 	  content: url('../imgs/testa.png');
-	  padding: 18px 0 0 0;
+	  padding: 33px 0 0 0;
 	  width: 100%;
 	  height: 100%;
 	  font-size: 5em;
@@ -144,7 +141,7 @@ page-home {
 
 	.coin .croce:after {
 	  content: url('../imgs/croce.png');
-	  padding: 18px 0 0 0;
+	  padding: 33px 0 0 0;
 	  width: 100%;
 	  height: 100%;
 	  font-size: 3em;
