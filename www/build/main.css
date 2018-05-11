@@ -28829,8 +28829,6 @@ page-home .coin {
   transform-style: preserve-3d;
   border: solid 1px #473f3f;
   border-radius: 100%;
-  -webkit-animation: coin 1s linear infinite;
-  animation: coin 1s linear infinite;
 }
 
 page-home .coin .testa {
@@ -28988,19 +28986,25 @@ page-home .coin .croce:after {
 
 @-webkit-keyframes fly {
   0% {
-    top: 80%;
+    top: 60%;
+  }
+  50% {
+    top: 10%;
   }
   100% {
-    top: 0%;
+    top: 60%;
   }
 }
 
 @keyframes fly {
   0% {
-    top: 80%;
+    top: 60%;
+  }
+  50% {
+    top: 10%;
   }
   100% {
-    top: 0%;
+    top: 60%;
   }
 }
 

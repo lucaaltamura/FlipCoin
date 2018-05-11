@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { AdMobFree, AdMobFreeBannerConfig, AdMobFreeInterstitialConfig } from '@ionic-native/admob-free';
+import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
+import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -13,56 +13,53 @@ export class HomePage {
 
   }
 
+  //Funzione per generare un numero casuale tra 0 e 1
   flipCoin() {
     function flip() {
       return Math.floor((Math.random() * 2) + 1);
     }
 
-    document.getElementById("croce").style.display = "inline";
-    document.getElementById("testa").style.display = "inline";
-    document.getElementById("testa").className = "coin-heads";
-    document.getElementById("croce").className = "coin-tails";
-    document.getElementById("coin").setAttribute("style", "animation: fly 1.5s ease-in-out 0s infinite alternate");
+    //Applico l'animazione del fly -> DA SISTEMARE
+    document.getElementById("coin").setAttribute("style", "animation: fly 1.5s ease-in-out 0s 3");
 
+    //Recupero il numero randomico generato
     var result = flip();
-    if(result === 1){
-      console.log("TESTA");
 
-      setTimeout(function () 
-      {
-        document.getElementById("croce").style.display = "none";
-        document.getElementById("testa").className = "";
-        document.getElementById("croce").className = "";
-        document.getElementById("coin").setAttribute("style", "animation: none");
-      }, 2900)
+    //Applico l'animazione
+    var coin = document.getElementById("coin");
+    var coinAnimation = coin.animate([
+      { transform: 'rotateX(0)' },
+      { transform: 'rotateX(180deg)' },
+      { transform: 'rotateX(360deg)' }
+    ], {
+        duration: 1000,
+        iterations: Infinity
+      });
+
+    //Verifico il risultato
+    if (result === 1) {
+      console.log("TESTA");
+      setTimeout(() => { coinAnimation.pause(); }, 4000)
     }
-    else if(result === 2){
+    else if (result === 2) {
       console.log("CROCE");
-      setTimeout(function () 
-      {
-        document.getElementById("testa").style.display = "none";
-        document.getElementById("testa").className = "";
-        document.getElementById("croce").className = "";
-        document.getElementById("coin").setAttribute("style", "animation: none");
-      }, 2900)
+      setTimeout(() => { coinAnimation.pause(); }, 4500)
     }
   }
-  
-  showBanner() {
- 
-        let bannerConfig: AdMobFreeBannerConfig = {
-            isTesting: true, // Remove in production
-            autoShow: true,
-            id: "ca-app-pub-2343597050706306/2593956753"
-        };
- 
-        this.admob.banner.config(bannerConfig);
- 
-        this.admob.banner.prepare().then(() => {
-            // success
-        }).catch(e => console.log(e));
- 
-    }
-	
 
+  showBanner() {
+
+    let bannerConfig: AdMobFreeBannerConfig = {
+      isTesting: true, // Remove in production
+      autoShow: true,
+      id: "ca-app-pub-2343597050706306/2593956753"
+    };
+
+    this.admob.banner.config(bannerConfig);
+
+    this.admob.banner.prepare().then(() => {
+      // success
+    }).catch(e => console.log(e));
+
+  }
 }
