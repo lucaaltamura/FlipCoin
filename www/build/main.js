@@ -292,22 +292,18 @@ var HomePage = /** @class */ (function () {
         }).catch(function (e) { return console.log(e); });
     };
     HomePage.prototype.flipCoin = function () {
-        //Funzione per applicare il rotate della moneta
-        __WEBPACK_IMPORTED_MODULE_4_jquery__["fn"].animateRotate = function (angle, duration, easing, complete) {
-            return this.each(function () {
-                var $elem = __WEBPACK_IMPORTED_MODULE_4_jquery__(this);
-                __WEBPACK_IMPORTED_MODULE_4_jquery__({ deg: 0 }).animate({ deg: angle }, {
-                    duration: duration,
-                    easing: easing,
-                    step: function (now) {
-                        $elem.css({
-                            transform: 'rotateX(' + now + 'deg)'
-                        });
-                    },
-                    complete: complete || __WEBPACK_IMPORTED_MODULE_4_jquery__["noop"]
-                });
+        function AnimateRotate(angle, duration, easing, complete) {
+            __WEBPACK_IMPORTED_MODULE_4_jquery__({ deg: 0 }).animate({ deg: angle }, {
+                duration: duration,
+                easing: easing,
+                step: function (now, fx) {
+                    __WEBPACK_IMPORTED_MODULE_4_jquery__("#coin").css({
+                        transform: "rotateX(" + now + "deg)"
+                    });
+                },
+                complete: complete || __WEBPACK_IMPORTED_MODULE_4_jquery__["noop"]
             });
-        };
+        }
         //Funzione per generare un numero casuale tra 0 e 1
         function flip() {
             return Math.floor((Math.random() * 2) + 1);
@@ -318,28 +314,28 @@ var HomePage = /** @class */ (function () {
         if (result === 1) {
             setTimeout(function () {
                 __WEBPACK_IMPORTED_MODULE_4_jquery__("#coin").animate({ top: '60%' }, 0);
-                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(0, 2000);
+                AnimateRotate(0, 2000);
                 __WEBPACK_IMPORTED_MODULE_4_jquery__("#coin").animate({ top: '10%' }, 1000);
                 __WEBPACK_IMPORTED_MODULE_4_jquery__("#coin").animate({ top: '60%' }, 1000);
-                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(180, 2000);
-                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(360, 2000);
-                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(540, 2000);
-                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(720, 2000);
-                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(900, 2000);
-                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(1080, 2000);
+                AnimateRotate(180, 2000);
+                AnimateRotate(360, 2000);
+                AnimateRotate(540, 2000);
+                AnimateRotate(720, 2000);
+                AnimateRotate(900, 2000);
+                AnimateRotate(1080, 2000);
             }, 0);
         }
         else if (result === 2) {
             setTimeout(function () {
                 __WEBPACK_IMPORTED_MODULE_4_jquery__("#coin").animate({ top: '60%' }, 0);
-                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(0, 2000);
+                AnimateRotate(0, 2000);
                 __WEBPACK_IMPORTED_MODULE_4_jquery__("#coin").animate({ top: '10%' }, 1000);
                 __WEBPACK_IMPORTED_MODULE_4_jquery__("#coin").animate({ top: '60%' }, 1000);
-                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(180, 2000);
-                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(360, 2000);
-                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(540, 2000);
-                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(720, 2000);
-                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(900, 2000);
+                AnimateRotate(180, 2000);
+                AnimateRotate(360, 2000);
+                AnimateRotate(540, 2000);
+                AnimateRotate(720, 2000);
+                AnimateRotate(900, 2000);
             }, 0);
         }
     };
