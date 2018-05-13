@@ -28818,19 +28818,22 @@ page-home .fixed-content {
   }
 }
 
+page-home .center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 page-home .coin {
-  margin: -50px 0 0 -50px;
-  width: 100px;
-  height: 100px;
+  margin: -50px -50px 0 -50px;
+  width: 130px;
+  height: 130px;
   position: absolute;
   top: 60%;
-  left: 50%;
+  left: 46.5%;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   border: solid 1px #473f3f;
   border-radius: 100%;
-  -webkit-animation: coin 1s linear infinite;
-  animation: coin 1s linear infinite;
 }
 
 page-home .coin .testa {
@@ -28914,7 +28917,7 @@ page-home .coin .testa_b:before {
 
 page-home .coin .testa_b:after {
   content: url("../imgs/testa.png");
-  padding: 18px 0 0 0;
+  padding: 33px 0 0 0;
   width: 100%;
   height: 100%;
   font-size: 5em;
@@ -28946,7 +28949,7 @@ page-home .coin .croce:before {
 
 page-home .coin .croce:after {
   content: url("../imgs/croce.png");
-  padding: 18px 0 0 0;
+  padding: 33px 0 0 0;
   width: 100%;
   height: 100%;
   font-size: 3em;
@@ -28969,6 +28972,10 @@ page-home .coin .croce:after {
     -webkit-transform: rotateX(0);
     transform: rotateX(0);
   }
+  500% {
+    -webkit-transform: rotateX(1890deg);
+    transform: rotateX(1890deg);
+  }
   100% {
     -webkit-transform: rotateX(360deg);
     transform: rotateX(360deg);
@@ -28980,6 +28987,10 @@ page-home .coin .croce:after {
     -webkit-transform: rotateX(0);
     transform: rotateX(0);
   }
+  500% {
+    -webkit-transform: rotateX(1890deg);
+    transform: rotateX(1890deg);
+  }
   100% {
     -webkit-transform: rotateX(360deg);
     transform: rotateX(360deg);
@@ -28988,19 +28999,25 @@ page-home .coin .croce:after {
 
 @-webkit-keyframes fly {
   0% {
-    top: 80%;
+    top: 60%;
+  }
+  50% {
+    top: 10%;
   }
   100% {
-    top: 0%;
+    top: 60%;
   }
 }
 
 @keyframes fly {
   0% {
-    top: 80%;
+    top: 60%;
+  }
+  50% {
+    top: 10%;
   }
   100% {
-    top: 0%;
+    top: 60%;
   }
 }
 
@@ -29016,4 +29033,48 @@ page-home .shadow {
 
 page-home .shadow p {
   color: transparent;
+}
+
+.ios .tutorial-page, .md .tutorial-page {
+  background: #1a333f;
+}
+
+.ios .tutorial-page .toolbar-background, .md .tutorial-page .toolbar-background {
+  background: #1a333f;
+  border-color: transparent;
+}
+
+.ios .tutorial-page .slide-zoom, .md .tutorial-page .slide-zoom {
+  height: 100%;
+}
+
+.ios .tutorial-page .slide-title, .md .tutorial-page .slide-title {
+  margin-top: 2.8rem;
+}
+
+.ios .tutorial-page .slide-image, .md .tutorial-page .slide-image {
+  max-height: 50%;
+  max-width: 60%;
+  margin: 18px 0;
+  -webkit-box-shadow: 0 0 26px black;
+  box-shadow: 0 0 26px black;
+  border-radius: 7px;
+}
+
+.ios .tutorial-page b, .md .tutorial-page b {
+  font-weight: 500;
+}
+
+.ios .tutorial-page p, .md .tutorial-page p {
+  padding: 0 40px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ios .tutorial-page b, .ios .tutorial-page p, .ios .tutorial-page h2, .ios .tutorial-page .bar-button, .ios .tutorial-page button, .md .tutorial-page b, .md .tutorial-page p, .md .tutorial-page h2, .md .tutorial-page .bar-button, .md .tutorial-page button {
+  color: #dbdbdb !important;
+}
+
+.ios .tutorial-page .swiper-pagination-bullet-active, .md .tutorial-page .swiper-pagination-bullet-active {
+  background: #dbdbdb;
 }

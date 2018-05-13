@@ -16,8 +16,8 @@ export class IntroPage {
     },
     {
       title: "How to flip?",
-      description: "Tap or swipe up to flip the coin",
-      image: "assets/img/ica-slidebox-img-2.png",
+      description: "You can simply tap or swipe up the coin :)",
+      image: "imgs/icon.png",
     }
   ];
 

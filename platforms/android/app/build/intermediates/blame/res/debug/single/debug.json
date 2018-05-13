@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Luca\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.0.4.aar\\70a57447845a74f8a647b2db3cf9fecb\\res\\drawable-mdpi-v4\\googleg_standard_color_18.png"
     },
     {
-        "merged": "C:\\Users\\Luca\\Desktop\\coin\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_disabled.xml.flat",
-        "source": "C:\\Users\\Luca\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.0.4.aar\\70a57447845a74f8a647b2db3cf9fecb\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
-    },
-    {
         "merged": "C:\\Users\\Luca\\Desktop\\coin\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_googleg_standard_color_18.png.flat",
         "source": "C:\\Users\\Luca\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.0.4.aar\\70a57447845a74f8a647b2db3cf9fecb\\res\\drawable-hdpi-v4\\googleg_standard_color_18.png"
+    },
+    {
+        "merged": "C:\\Users\\Luca\\Desktop\\coin\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_disabled.xml.flat",
+        "source": "C:\\Users\\Luca\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.0.4.aar\\70a57447845a74f8a647b2db3cf9fecb\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
     },
     {
         "merged": "C:\\Users\\Luca\\Desktop\\coin\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_googleg_standard_color_18.png.flat",
@@ -24,12 +24,12 @@
         "source": "C:\\Users\\Luca\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.0.4.aar\\70a57447845a74f8a647b2db3cf9fecb\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
-        "merged": "C:\\Users\\Luca\\Desktop\\coin\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xxhdpi_screen.png.flat",
-        "source": "C:\\Users\\Luca\\Desktop\\coin\\platforms\\android\\app\\src\\main\\res\\drawable-port-xxhdpi\\screen.png"
-    },
-    {
         "merged": "C:\\Users\\Luca\\Desktop\\coin\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
         "source": "C:\\Users\\Luca\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.0.4.aar\\70a57447845a74f8a647b2db3cf9fecb\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Luca\\Desktop\\coin\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xxhdpi_screen.png.flat",
+        "source": "C:\\Users\\Luca\\Desktop\\coin\\platforms\\android\\app\\src\\main\\res\\drawable-port-xxhdpi\\screen.png"
     },
     {
         "merged": "C:\\Users\\Luca\\Desktop\\coin\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_googleg_disabled_color_18.png.flat",

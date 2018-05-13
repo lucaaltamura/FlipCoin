@@ -31,8 +31,8 @@ var IntroPage = /** @class */ (function () {
             },
             {
                 title: "How to flip?",
-                description: "Tap or swipe up to flip the coin",
-                image: "assets/img/ica-slidebox-img-2.png",
+                description: "You can simply tap or swipe up the coin :)",
+                image: "imgs/icon.png",
             }
         ];
     }
@@ -41,7 +41,7 @@ var IntroPage = /** @class */ (function () {
     };
     IntroPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-intro',template:/*ion-inline-start:"/Users/lucaaltamura/Desktop/FlipCoin/src/pages/intro/intro.html"*/'<ion-content class="tutorial-page">\n\n    <ion-slides pager>\n      <ion-slide *ngFor="let slide of slides">\n        <ion-toolbar>\n          <ion-buttons end>\n            <button ion-button color="primary" (click)="goToHome()">Skip</button>\n          </ion-buttons>\n        </ion-toolbar>\n        <img [src]="slide.image" class="slide-image"/>\n        <h2 class="slide-title" [innerHTML]="slide.title"></h2>\n        <p [innerHTML]="slide.description"></p>\n      </ion-slide>\n      <ion-slide>\n        <ion-toolbar>\n        </ion-toolbar>\n        <img src="assets/img/ica-slidebox-img-4.png" class="slide-image"/>\n        <h2 class="slide-title">Ready to Play?</h2>\n        <button ion-button large clear icon-end color="primary" (click)="goToHome()">\n          Continue\n          <ion-icon name="arrow-forward"></ion-icon>\n        </button>\n      </ion-slide>\n    </ion-slides>\n  </ion-content>'/*ion-inline-end:"/Users/lucaaltamura/Desktop/FlipCoin/src/pages/intro/intro.html"*/,
+            selector: 'page-intro',template:/*ion-inline-start:"C:\Users\Luca\Desktop\coin\src\pages\intro\intro.html"*/'<ion-content class="tutorial-page">\n\n\n\n    <ion-slides pager>\n\n      <ion-slide *ngFor="let slide of slides">\n\n        <ion-toolbar>\n\n          <ion-buttons end>\n\n            <button ion-button color="primary" (click)="goToHome()">Skip</button>\n\n          </ion-buttons>\n\n        </ion-toolbar>\n\n        <img [src]="slide.image" class="slide-image"/>\n\n        <h2 class="slide-title" [innerHTML]="slide.title"></h2>\n\n        <p [innerHTML]="slide.description"></p>\n\n      </ion-slide>\n\n      <ion-slide>\n\n        <ion-toolbar>\n\n        </ion-toolbar>\n\n        <img src="imgs/icon.png" class="slide-image"/>\n\n        <h2 class="slide-title">Ready to play?</h2>\n\n		<p>Choose between head or tail and let\'s see what happen. <br> Good luck for your choice!</p>\n\n        <button ion-button large clear icon-end color="primary" (click)="goToHome()">\n\n          Continue\n\n          <ion-icon name="arrow-forward"></ion-icon>\n\n        </button>\n\n      </ion-slide>\n\n    </ion-slides>\n\n  </ion-content>'/*ion-inline-end:"C:\Users\Luca\Desktop\coin\src\pages\intro\intro.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], IntroPage);
@@ -238,7 +238,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/lucaaltamura/Desktop/FlipCoin/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/lucaaltamura/Desktop/FlipCoin/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Luca\Desktop\coin\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Luca\Desktop\coin\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
     ], MyApp);
@@ -348,12 +348,11 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/lucaaltamura/Desktop/FlipCoin/src/pages/home/home.html"*/'<ion-content padding style="overflow: hidden;">\n\n	<div swipeAll id="coin" class="coin center" (click)="flipCoin()" (swipeup)="swipeUp($event)">\n		<div class="testa"></div>\n		<div class="testa_b"></div>\n		<div class="croce"></div>\n		<div class="croce_b"></div>\n	</div>\n	<!--<div class="shadow"><p>a</p></div>-->\n\n</ion-content>'/*ion-inline-end:"/Users/lucaaltamura/Desktop/FlipCoin/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Luca\Desktop\coin\src\pages\home\home.html"*/'<ion-content padding style="overflow: hidden;">\n\n\n\n	<div swipeAll id="coin" class="coin center" (click)="flipCoin()" (swipeup)="swipeUp($event)">\n\n		<div class="testa"></div>\n\n		<div class="testa_b"></div>\n\n		<div class="croce"></div>\n\n		<div class="croce_b"></div>\n\n	</div>\n\n	<!--<div class="shadow"><p>a</p></div>-->\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\Luca\Desktop\coin\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_speech_recognition__["a" /* SpeechRecognition */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_speech_recognition__["a" /* SpeechRecognition */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__ionic_native_admob_free__["a" /* AdMobFree */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ionic_native_admob_free__["a" /* AdMobFree */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_speech_recognition__["a" /* SpeechRecognition */], __WEBPACK_IMPORTED_MODULE_1__ionic_native_admob_free__["a" /* AdMobFree */]])
     ], HomePage);
     return HomePage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=home.js.map

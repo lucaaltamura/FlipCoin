@@ -29056,6 +29056,9 @@ page-home .shadow p {
   max-height: 50%;
   max-width: 60%;
   margin: 18px 0;
+  -webkit-box-shadow: 0 0 26px black;
+  box-shadow: 0 0 26px black;
+  border-radius: 7px;
 }
 
 .ios .tutorial-page b, .md .tutorial-page b {
@@ -29066,9 +29069,12 @@ page-home .shadow p {
   padding: 0 40px;
   font-size: 14px;
   line-height: 1.5;
-  color: #60646B;
 }
 
-.ios .tutorial-page p b, .md .tutorial-page p b {
-  color: #000000;
+.ios .tutorial-page b, .ios .tutorial-page p, .ios .tutorial-page h2, .ios .tutorial-page .bar-button, .ios .tutorial-page button, .md .tutorial-page b, .md .tutorial-page p, .md .tutorial-page h2, .md .tutorial-page .bar-button, .md .tutorial-page button {
+  color: #dbdbdb !important;
+}
+
+.ios .tutorial-page .swiper-pagination-bullet-active, .md .tutorial-page .swiper-pagination-bullet-active {
+  background: #dbdbdb;
 }
