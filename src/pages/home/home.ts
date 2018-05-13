@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
 import { SpeechRecognition } from '@ionic-native/speech-recognition';
 import { NavController } from 'ionic-angular';
+import * as $ from 'jquery'
 
 @Component({
   selector: 'page-home',
@@ -13,50 +14,7 @@ export class HomePage {
 
   }
 
-  //Funzione per generare un numero casuale tra 0 e 1
-  flipCoin() {
-    function flip() {
-      return Math.floor((Math.random() * 2) + 1);
-    }
-
-    //Applico l'animazione del fly
-    document.getElementById("coin").setAttribute("style", "animation: fly 2s ease-in-out 0s 1");
-
-    //Recupero il numero randomico generato
-    var result = flip();
-
-    //Applico l'animazione
-    var coin = document.getElementById("coin");
-    var coinAnimation = coin.animate([
-      { transform: 'rotateX(0)' },
-      { transform: 'rotateX(180deg)' },
-      { transform: 'rotateX(360deg)' }
-    ], {
-        duration: 1000,
-        iterations: Infinity
-      });
-
-    //Verifico il risultato
-    if (result === 1) {
-      console.log("TESTA");
-      setTimeout(() => { coinAnimation.pause(); }, 2000)
-    }
-    else if (result === 2) {
-	  document.getElementById("coin").setAttribute("style", "animation: fly 2.5s ease-in-out 0s 1");
-      console.log("CROCE");
-      setTimeout(() => { coinAnimation.pause(); }, 2500)
-    }
-  }
-  
-  
-  
-  
-  
-  
-  
-
-  showBanner() {
-
+  ionViewWillEnter() {
     let bannerConfig: AdMobFreeBannerConfig = {
       isTesting: true, // Remove in production
       autoShow: true,
@@ -68,6 +26,79 @@ export class HomePage {
     this.admob.banner.prepare().then(() => {
       // success
     }).catch(e => console.log(e));
+  }
 
+  flipCoin() {
+
+    //Funzione per applicare il rotate della moneta
+    $.fn.animateRotate = function (angle, duration, easing, complete) {
+      return this.each(function () {
+        var $elem = $(this);
+
+        $({ deg: 0 }).animate({ deg: angle }, {
+          duration: duration,
+          easing: easing,
+          step: function (now) {
+            $elem.css({
+              transform: 'rotateX(' + now + 'deg)'
+            });
+          },
+          complete: complete || $.noop
+        });
+      });
+    };
+
+    //Funzione per generare un numero casuale tra 0 e 1
+    function flip() {
+      return Math.floor((Math.random() * 2) + 1);
+    }
+
+    //Recupero il numero randomico generato
+    var result = flip();
+
+    //Verifico il risultato
+    if (result === 1) {
+      setTimeout(() => {
+
+        $("#coin").animate({ top: '60%' }, 0);
+        $('#coin').animateRotate(0, 2000);
+
+
+        $("#coin").animate({ top: '10%' }, 1000);
+        $("#coin").animate({ top: '60%' }, 1000);
+
+        $('#coin').animateRotate(180, 2000);
+        $('#coin').animateRotate(360, 2000);
+        $('#coin').animateRotate(540, 2000);
+        $('#coin').animateRotate(720, 2000);
+        $('#coin').animateRotate(900, 2000);
+        $('#coin').animateRotate(1080, 2000);
+      }, 0);
+    }
+    else if (result === 2) {
+      setTimeout(() => {
+
+        $("#coin").animate({ top: '60%' }, 0);
+        $('#coin').animateRotate(0, 2000);
+
+        $("#coin").animate({ top: '10%' }, 1000);
+        $("#coin").animate({ top: '60%' }, 1000);
+
+        $('#coin').animateRotate(180, 2000);
+        $('#coin').animateRotate(360, 2000);
+        $('#coin').animateRotate(540, 2000);
+        $('#coin').animateRotate(720, 2000);
+        $('#coin').animateRotate(900, 2000);
+      }, 0);
+    }
+  }
+
+  //Funzione per gestire lo swipe up
+  swipeUp(event) {
+
+    console.log(event);
+    if (event.direction === 8) {
+      this.flipCoin();
+    }
   }
 }

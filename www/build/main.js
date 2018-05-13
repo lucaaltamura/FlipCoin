@@ -1,48 +1,13 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
-/***/ 109:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 109;
-
-/***/ }),
-
-/***/ 155:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 155;
-
-/***/ }),
-
-/***/ 196:
+/***/ 102:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return IntroPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_admob_free__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_speech_recognition__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -55,75 +20,87 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, speechRecognition, admob) {
+var IntroPage = /** @class */ (function () {
+    function IntroPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
-        this.speechRecognition = speechRecognition;
-        this.admob = admob;
+        this.navParams = navParams;
+        this.slides = [
+            {
+                title: "Welcome to Head or Tails!",
+                image: "imgs/icon.png",
+            },
+            {
+                title: "How to flip?",
+                description: "Tap or swipe up to flip the coin",
+                image: "assets/img/ica-slidebox-img-2.png",
+            }
+        ];
     }
-    //Funzione per generare un numero casuale tra 0 e 1
-    HomePage.prototype.flipCoin = function () {
-        function flip() {
-            return Math.floor((Math.random() * 2) + 1);
-        }
-        //Applico l'animazione del fly
-        document.getElementById("coin").setAttribute("style", "animation: fly 2s ease-in-out 0s 1");
-        //Recupero il numero randomico generato
-        var result = flip();
-        //Applico l'animazione
-        var coin = document.getElementById("coin");
-        var coinAnimation = coin.animate([
-            { transform: 'rotateX(0)' },
-            { transform: 'rotateX(180deg)' },
-            { transform: 'rotateX(360deg)' }
-        ], {
-            duration: 1000,
-            iterations: Infinity
-        });
-        //Verifico il risultato
-        if (result === 1) {
-            console.log("TESTA");
-            setTimeout(function () { coinAnimation.pause(); }, 2000);
-        }
-        else if (result === 2) {
-            document.getElementById("coin").setAttribute("style", "animation: fly 2.5s ease-in-out 0s 1");
-            console.log("CROCE");
-            setTimeout(function () { coinAnimation.pause(); }, 2500);
-        }
+    IntroPage.prototype.goToHome = function () {
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]);
     };
-    HomePage.prototype.showBanner = function () {
-        var bannerConfig = {
-            isTesting: true,
-            autoShow: true,
-            id: "ca-app-pub-2343597050706306/2593956753"
-        };
-        this.admob.banner.config(bannerConfig);
-        this.admob.banner.prepare().then(function () {
-            // success
-        }).catch(function (e) { return console.log(e); });
-    };
-    HomePage = __decorate([
+    IntroPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Luca\Desktop\coin\src\pages\home\home.html"*/'<ion-content padding>\n\n\n\n	<div id="coin" class="coin" (click)="flipCoin()" (swipe)="flipCoin()">\n\n		<div class="testa"></div>\n\n		<div class="testa_b"></div>\n\n		<div class="croce"></div>\n\n		<div class="croce_b"></div>\n\n	</div>\n\n	<!--<div class="shadow"><p>a</p></div>-->\n\n\n\n\n\n\n\n	<button ion-button (click)="showBanner()">Show Banner</button>\n\n\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\Luca\Desktop\coin\src\pages\home\home.html"*/
+            selector: 'page-intro',template:/*ion-inline-start:"/Users/lucaaltamura/Desktop/FlipCoin/src/pages/intro/intro.html"*/'<ion-content class="tutorial-page">\n\n    <ion-slides pager>\n      <ion-slide *ngFor="let slide of slides">\n        <ion-toolbar>\n          <ion-buttons end>\n            <button ion-button color="primary" (click)="goToHome()">Skip</button>\n          </ion-buttons>\n        </ion-toolbar>\n        <img [src]="slide.image" class="slide-image"/>\n        <h2 class="slide-title" [innerHTML]="slide.title"></h2>\n        <p [innerHTML]="slide.description"></p>\n      </ion-slide>\n      <ion-slide>\n        <ion-toolbar>\n        </ion-toolbar>\n        <img src="assets/img/ica-slidebox-img-4.png" class="slide-image"/>\n        <h2 class="slide-title">Ready to Play?</h2>\n        <button ion-button large clear icon-end color="primary" (click)="goToHome()">\n          Continue\n          <ion-icon name="arrow-forward"></ion-icon>\n        </button>\n      </ion-slide>\n    </ion-slides>\n  </ion-content>'/*ion-inline-end:"/Users/lucaaltamura/Desktop/FlipCoin/src/pages/intro/intro.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_speech_recognition__["a" /* SpeechRecognition */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_speech_recognition__["a" /* SpeechRecognition */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__ionic_native_admob_free__["a" /* AdMobFree */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ionic_native_admob_free__["a" /* AdMobFree */]) === "function" && _c || Object])
-    ], HomePage);
-    return HomePage;
-    var _a, _b, _c;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    ], IntroPage);
+    return IntroPage;
 }());
 
-//# sourceMappingURL=home.js.map
+//# sourceMappingURL=intro.js.map
 
 /***/ }),
 
-/***/ 197:
+/***/ 111:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 111;
+
+/***/ }),
+
+/***/ 157:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"../pages/intro/intro.module": [
+		282,
+		0
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return __webpack_require__.e(ids[1]).then(function() {
+		return __webpack_require__(ids[0]);
+	});
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = 157;
+module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ 199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(222);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -131,27 +108,33 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 220:
+/***/ 222:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_device_motion__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_speech_recognition__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_admob_free__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_home__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_device_motion__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_speech_recognition__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_admob_free__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_home__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_storage__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_intro_intro__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ionic_swipe_all__ = __webpack_require__(278);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -169,18 +152,24 @@ var AppModule = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */]
+                __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_intro_intro__["a" /* IntroPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */], {}, {
-                    links: []
-                })
+                    links: [
+                        { loadChildren: '../pages/intro/intro.module#IntroPageModule', name: 'IntroPage', segment: 'intro', priority: 'low', defaultHistory: [] }
+                    ]
+                }),
+                __WEBPACK_IMPORTED_MODULE_10__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_12_ionic_swipe_all__["a" /* IonicSwipeAllModule */]
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */]
+                __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_intro_intro__["a" /* IntroPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
@@ -199,16 +188,18 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 271:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_intro_intro__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -223,10 +214,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var MyApp = /** @class */ (function () {
-    function MyApp(platform, statusBar, splashScreen) {
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */];
+    function MyApp(platform, statusBar, splashScreen, storage) {
+        var _this = this;
+        this.storage = storage;
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */];
         platform.ready().then(function () {
+            _this.storage.get('introShown').then(function (result) {
+                if (result) {
+                    _this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_home_home__["a" /* HomePage */];
+                }
+                else {
+                    _this.rootPage = __WEBPACK_IMPORTED_MODULE_6__pages_intro_intro__["a" /* IntroPage */];
+                    _this.storage.set('introShown', true);
+                }
+            });
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
@@ -234,16 +238,131 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Luca\Desktop\coin\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Luca\Desktop\coin\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/lucaaltamura/Desktop/FlipCoin/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/lucaaltamura/Desktop/FlipCoin/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
     ], MyApp);
     return MyApp;
 }());
 
 //# sourceMappingURL=app.component.js.map
 
+/***/ }),
+
+/***/ 80:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_admob_free__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_speech_recognition__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_jquery__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var HomePage = /** @class */ (function () {
+    function HomePage(navCtrl, speechRecognition, admob) {
+        this.navCtrl = navCtrl;
+        this.speechRecognition = speechRecognition;
+        this.admob = admob;
+    }
+    HomePage.prototype.ionViewWillEnter = function () {
+        var bannerConfig = {
+            isTesting: true,
+            autoShow: true,
+            id: "ca-app-pub-2343597050706306/2593956753"
+        };
+        this.admob.banner.config(bannerConfig);
+        this.admob.banner.prepare().then(function () {
+            // success
+        }).catch(function (e) { return console.log(e); });
+    };
+    HomePage.prototype.flipCoin = function () {
+        //Funzione per applicare il rotate della moneta
+        __WEBPACK_IMPORTED_MODULE_4_jquery__["fn"].animateRotate = function (angle, duration, easing, complete) {
+            return this.each(function () {
+                var $elem = __WEBPACK_IMPORTED_MODULE_4_jquery__(this);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__({ deg: 0 }).animate({ deg: angle }, {
+                    duration: duration,
+                    easing: easing,
+                    step: function (now) {
+                        $elem.css({
+                            transform: 'rotateX(' + now + 'deg)'
+                        });
+                    },
+                    complete: complete || __WEBPACK_IMPORTED_MODULE_4_jquery__["noop"]
+                });
+            });
+        };
+        //Funzione per generare un numero casuale tra 0 e 1
+        function flip() {
+            return Math.floor((Math.random() * 2) + 1);
+        }
+        //Recupero il numero randomico generato
+        var result = flip();
+        //Verifico il risultato
+        if (result === 1) {
+            setTimeout(function () {
+                __WEBPACK_IMPORTED_MODULE_4_jquery__("#coin").animate({ top: '60%' }, 0);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(0, 2000);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__("#coin").animate({ top: '10%' }, 1000);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__("#coin").animate({ top: '60%' }, 1000);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(180, 2000);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(360, 2000);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(540, 2000);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(720, 2000);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(900, 2000);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(1080, 2000);
+            }, 0);
+        }
+        else if (result === 2) {
+            setTimeout(function () {
+                __WEBPACK_IMPORTED_MODULE_4_jquery__("#coin").animate({ top: '60%' }, 0);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(0, 2000);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__("#coin").animate({ top: '10%' }, 1000);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__("#coin").animate({ top: '60%' }, 1000);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(180, 2000);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(360, 2000);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(540, 2000);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(720, 2000);
+                __WEBPACK_IMPORTED_MODULE_4_jquery__('#coin').animateRotate(900, 2000);
+            }, 0);
+        }
+    };
+    //Funzione per gestire lo swipe up
+    HomePage.prototype.swipeUp = function (event) {
+        console.log(event);
+        if (event.direction === 8) {
+            this.flipCoin();
+        }
+    };
+    HomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-home',template:/*ion-inline-start:"/Users/lucaaltamura/Desktop/FlipCoin/src/pages/home/home.html"*/'<ion-content padding style="overflow: hidden;">\n\n	<div swipeAll id="coin" class="coin center" (click)="flipCoin()" (swipeup)="swipeUp($event)">\n		<div class="testa"></div>\n		<div class="testa_b"></div>\n		<div class="croce"></div>\n		<div class="croce_b"></div>\n	</div>\n	<!--<div class="shadow"><p>a</p></div>-->\n\n</ion-content>'/*ion-inline-end:"/Users/lucaaltamura/Desktop/FlipCoin/src/pages/home/home.html"*/
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_speech_recognition__["a" /* SpeechRecognition */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_speech_recognition__["a" /* SpeechRecognition */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__ionic_native_admob_free__["a" /* AdMobFree */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__ionic_native_admob_free__["a" /* AdMobFree */]) === "function" && _c || Object])
+    ], HomePage);
+    return HomePage;
+    var _a, _b, _c;
+}());
+
+//# sourceMappingURL=home.js.map
+
 /***/ })
 
-},[197]);
+},[199]);
 //# sourceMappingURL=main.js.map

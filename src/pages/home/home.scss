@@ -21,15 +21,18 @@ page-home {
 
 
 
-
+	.center {
+		margin-left: auto;
+		margin-right: auto;
+	}
 
 	.coin {
-	  margin: -50px 0 0 -50px;
+	  margin: -50px -50px 0 -50px;
 	  width: 130px;
 	  height: 130px;
 	  position: absolute;
 	  top: 60%;
-	  left: 50%;
+		left: 46.5%;
 	  transform-style: preserve-3d;
 	  border: solid 1px #473f3f;
 	  border-radius: 100%;
@@ -159,14 +162,15 @@ page-home {
 	  
   @keyframes coin {
     0% { transform: rotateX(0); }
-    100% { transform: rotateX(360deg); }
+		500% { transform: rotateX(1890deg); }
+		100% { transform: rotateX(360deg); }
   }
   
   @keyframes fly {
     0% { top: 60%; }
     50% { top: 10%; }
     100%  {top: 60% }
-  }
+	}
 
   .shadow{
     background-color:rgba(255, 0, 0, 0.3);
@@ -178,5 +182,7 @@ page-home {
     border-radius:100%		
   }
   
-  .shadow p{color:rgba(0, 0, 0, 0);}
+	.shadow p{color:rgba(0, 0, 0, 0);}
+
+	
 }

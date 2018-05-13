@@ -8,20 +8,27 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { AdMobFree } from '@ionic-native/admob-free';
 import { HomePage } from '../pages/home/home';
 import { MyApp } from './app.component';
+import { IonicStorageModule } from '@ionic/storage';
+import { IntroPage } from '../pages/intro/intro';
+import { IonicSwipeAllModule } from 'ionic-swipe-all';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    IntroPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
+    IonicSwipeAllModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    IntroPage
   ],
   providers: [
     StatusBar,

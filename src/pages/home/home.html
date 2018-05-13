@@ -1,16 +1,11 @@
-<ion-content padding>
+<ion-content padding style="overflow: hidden;">
 
-	<div id="coin" class="coin" (click)="flipCoin()" (swipe)="flipCoin()">
+	<div swipeAll id="coin" class="coin center" (click)="flipCoin()" (swipeup)="swipeUp($event)">
 		<div class="testa"></div>
 		<div class="testa_b"></div>
 		<div class="croce"></div>
 		<div class="croce_b"></div>
 	</div>
 	<!--<div class="shadow"><p>a</p></div>-->
-
-
-
-	<button ion-button (click)="showBanner()">Show Banner</button>
-
 
 </ion-content>
