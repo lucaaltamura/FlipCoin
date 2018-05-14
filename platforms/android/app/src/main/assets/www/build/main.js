@@ -282,7 +282,7 @@ var HomePage = /** @class */ (function () {
     }
     HomePage.prototype.ionViewWillEnter = function () {
         var bannerConfig = {
-            isTesting: true,
+            isTesting: false,
             autoShow: true,
             id: "ca-app-pub-2343597050706306/2593956753"
         };
