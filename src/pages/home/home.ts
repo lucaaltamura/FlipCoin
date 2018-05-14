@@ -16,7 +16,7 @@ export class HomePage {
 
   ionViewWillEnter() {
     let bannerConfig: AdMobFreeBannerConfig = {
-      isTesting: true, // Remove in production
+      isTesting: false, // Remove in production
       autoShow: true,
       id: "ca-app-pub-2343597050706306/2593956753"
     };
